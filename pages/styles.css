@@ -198,7 +198,7 @@ textarea {
 }
 
 .generate p {
-    color: white;
+    color: rgb(255, 255, 255);
     margin: 0;
 }
 
@@ -216,10 +216,6 @@ textarea {
     position: fixed;
     width: auto;
     z-index: 1;
-}
-
-.api-result {
-    color: #FFF;
 }
 
 .badge-container a {
@@ -328,6 +324,10 @@ textarea {
     text-align: center;
     white-space: pre-line;
     color: rgba(255, 255, 255, 0.5);
+}
+
+.api-result {
+    color: white;
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
