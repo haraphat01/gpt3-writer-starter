@@ -12,13 +12,13 @@ Title:
 `;
 
 const generateAction = async (req, res) => {
-  console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
+  // console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
 
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: `${basePromptPrefix}${req.body.userInput}`,
     temperature: 0.8,
-    max_tokens: 250,
+    max_tokens: 256,
   });
 
   const basePromptOutput = baseCompletion.data.choices.pop();

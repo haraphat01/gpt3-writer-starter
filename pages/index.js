@@ -9,14 +9,13 @@ const Home = () => {
   const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
-
   let clearParagraph = () => {
     setApiOutput(false);
   };
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
-
-    // console.log('Calling OpenAI...');
+    
+    console.log("Calling OpenAI...")
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
@@ -24,14 +23,15 @@ const Home = () => {
       },
       body: JSON.stringify({ userInput }),
     });
-
+  
     const data = await response.json();
     const { output } = data;
-    // console.log('OpenAI replied...', output.text);
-
+    console.log("OpenAI replied...", output.text)
+  
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
-  };
+  }
+  
 
   const onUserChangedText = (event) => {
     setUserInput(event.target.value);
