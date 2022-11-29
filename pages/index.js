@@ -2,12 +2,17 @@ import Head from 'next/head';
 import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
+import { TfiReload } from 'react-icons/tfi';
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
   const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
+  let [clear, isClear] = useState('');
 
+  let clearParagraph = () => {
+    setApiOutput(false);
+  };
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
 
@@ -52,17 +57,34 @@ const Home = () => {
             value={userInput}
             onChange={onUserChangedText}
           />
-          ;
+          <div className="">
+            <a className="generate-button" onClick={callGenerateEndpoint}>
+              <div className="generate">
+                <p>Write</p>
+              </div>
+            </a>
+          </div>
         </div>
-        <div className="prompt-buttons">
-          <a className="generate-button" onClick={callGenerateEndpoint}>
-            <div className="generate">
-              <p>Write</p>
-            </div>
-          </a>
-        </div>
+
         <div className="api-result">
-          <p>{apiOutput}</p>
+          {isGenerating ? (
+            <p>Relax while your content is being generated...</p>
+          ) : (
+            <p>{apiOutput}</p>
+          )}
+
+          {apiOutput && (
+            <div className="clear-button">
+              <a
+                className=""
+                onClick={clearParagraph}
+              >
+                <div className="">
+                  <p>Clear</p>
+                </div>
+              </a>
+            </div>
+          )}
         </div>
       </div>
       {/* <div className="badge-container grow">
