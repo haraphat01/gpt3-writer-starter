@@ -22,7 +22,7 @@ const Home = () => {
 
     const data = await response.json();
     const { output } = data;
-    // console.log('OpenAI replied...', output.text);
+    console.log('OpenAI replied...', output.text);
 
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
@@ -34,19 +34,15 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>AI Writer</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Your AI Assistance</h1>
+            <h1>A I Writer</h1>
           </div>
           <div className="header-subtitle">
-            <h2>
-              Are you looking for a writer that can help you with all your
-              writing needs? AI writer helps businesses with all their writing
-              needs. Input your topic and let's the A.I do the magic.
-            </h2>
+            <h2>Insert the topic, let's the AI do the rest for you</h2>
           </div>
         </div>
         <div className="prompt-container">
@@ -61,7 +57,7 @@ const Home = () => {
         <div className="prompt-buttons">
           <a className="generate-button" onClick={callGenerateEndpoint}>
             <div className="generate">
-              <p>Generate</p>
+              <p>Write</p>
             </div>
           </a>
         </div>
@@ -69,7 +65,7 @@ const Home = () => {
           <p>{apiOutput}</p>
         </div>
       </div>
-      <div className="badge-container grow">
+      {/* <div className="badge-container grow">
         <a
           href="https://buildspace.so/builds/ai-writer"
           target="_blank"
@@ -80,7 +76,7 @@ const Home = () => {
             <p>build with buildspace</p>
           </div>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };
