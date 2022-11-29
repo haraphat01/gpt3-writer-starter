@@ -14,8 +14,8 @@ const Home = () => {
   };
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
-    
-    console.log("Calling OpenAI...")
+
+    // console.log('Calling OpenAI...');
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
@@ -23,15 +23,14 @@ const Home = () => {
       },
       body: JSON.stringify({ userInput }),
     });
-  
+
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text)
-  
+    // console.log('OpenAI replied...', output.text);
+
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
-  }
-  
+  };
 
   const onUserChangedText = (event) => {
     setUserInput(event.target.value);
@@ -47,7 +46,8 @@ const Home = () => {
             <h1>A I Writer</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Insert the topic, let's the AI do the rest for you</h2>
+            <h2>Writer's block is real, but it shouldn't limit you. </h2>
+            <h2>Type your topic below, let's the AI do the rest for you</h2>
           </div>
         </div>
         <div className="prompt-container">
