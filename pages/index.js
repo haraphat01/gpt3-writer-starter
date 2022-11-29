@@ -16,7 +16,7 @@ const Home = () => {
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
 
-    console.log('Calling OpenAI...');
+    // console.log('Calling OpenAI...');
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
@@ -75,10 +75,7 @@ const Home = () => {
 
           {apiOutput && (
             <div className="clear-button">
-              <a
-                className=""
-                onClick={clearParagraph}
-              >
+              <a className="" onClick={clearParagraph}>
                 <div className="">
                   <p>Clear</p>
                 </div>
