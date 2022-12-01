@@ -34,7 +34,7 @@ module.exports = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://https://pencilai.netlify.app',
+        destination: 'https://https://pencilai.netlify.app/:path*',
       },
     ];
   },
