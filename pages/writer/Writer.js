@@ -52,16 +52,16 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>AI Writer</title>
+        <title>Pencil Writer</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>A I Writer</h1>
+            <h1>Pencil Writer</h1>
           </div>
           <div className="header-subtitle">
             <h2>Writer's block is real, but it shouldn't limit you. </h2>
-            <h2>Type your topic below, let's the AI do the rest for you</h2>
+            <h2>Type your topic below, let's pencil write the article for you</h2>
           </div>
         </div>
         <div className="prompt-container">
